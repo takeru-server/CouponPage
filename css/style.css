@@ -1,1 +1,216 @@
+@CHARSET "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;400;500&display=swap');
 
+
+* {
+	margin: 0 auto;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+body{
+	line-height: 1;
+	font-family: 'Kiwi Maru', serif;
+	overflow-x: hidden;
+	-webkit-text-size-adjust: 100%;
+	background:#f2e085;
+	
+	/* add_start_20220106 */
+	/* 参考：https://wunderstand.net/379/ */
+	letter-spacing: 0.05em;				/* 文字間隔をセレクトボックスの幅に合わせる */
+	font-feature-settings: "palt" 1;	/* カーニングをする */
+	/* add_end_20220106 */
+}
+
+.title{
+	text-align: center;
+	margin:80px 0px 0px 0px;
+	padding-bottom: 50px;
+	justify-content: center;
+}
+
+h1{ text-align: center; font-weight:600;  color:#d92323;
+	padding-bottom: 50px;
+}
+
+/* 「よく行くごはん屋さん」の「ごはん」の部分を1文字ずつspanタグで囲うと丸の中に文字が書ける */
+/*
+h1 span{
+	display: inline-block;
+	background-color: #c1c1c1;
+	border-radius: 50%;
+	margin: auto;
+	text-align: center;
+}
+*/
+
+img {
+	text-align: center;
+	margin: auto;
+	display: block;
+}
+
+.select_area{
+	margin:0 auto 40px;
+	display:flex;
+	justfy-content: space-around;
+	text-align: center;
+}
+
+.select_area select {
+	width: 100%;
+	padding-right: 1em;
+	cursor: pointer;
+	text-indent: 0.01px;
+	text-overflow: ellipsis;
+	border: none;
+	outline: none;
+	background: transparent;
+	background-image: none;
+	box-shadow: none;
+	-webkit-appearance: none;
+	appearance: none;
+}
+.select_area select::-ms-expand {
+	display: none;
+}
+.select_box {
+	position: relative;
+	border: 2px solid #95a617;
+	background: #fff;
+}
+.select_box::before {
+	position: absolute;
+	top: 20px;
+	right: 10px;
+	width: 0;
+	height: 0;
+	padding: 0;
+	content: '';
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	border-top: 10px solid #ccc;
+	pointer-events: none;
+}
+.select_box select {
+	padding: 15px 38px 15px 15px;
+	color: #565656; font-size: 18px;
+}
+
+/* ばってんの部分 */
+.cross_mark{
+	color:#d92323;
+}
+
+.iframe_area {
+	width: 90%;
+	margin: 0 auto 80px;
+	display: flex;
+	justfy-content: space-bitween;
+	flex-wrap: wrap;
+}
+
+.iframe_area iframe {
+	width: 100%;
+	display: block;
+	margin: 0 0 20px;
+}
+
+
+@media screen and (max-width: 480px) {
+	/* 480px以下に適用されるCSS（スマホ用） */
+	body {
+		width: 100vw;
+	}
+	
+	.title{
+		margin-left: 20px;
+		margin-right: 20px;
+		font-size:28px;
+	}
+	
+	h1 span{
+		width: 35px;
+		height: 35px;
+		line-height: 30px;
+	}
+	
+	img {
+		width: 30%;
+		height: 30%;
+	}
+	
+	.select_area{
+		width: 80vw;
+		display:block;
+	}
+	
+	.select_box select {
+		width:80vw;
+	}
+	
+	/* ばってんの部分 */
+	.cross_mark{
+		margin-top: 10px;
+		margin-bottom: 10px;
+		font-size: 24px;
+	}
+	
+	.iframe_area{
+		width:80vw;
+	} 
+	
+	.iframe_area #ifrm1{
+		height:550px;
+	}
+
+	.iframe_area #ifrm2{
+		height:550px;
+	}
+
+}
+
+@media screen and (min-width: 481px) {
+	/* 481px以上に適用されるCSS（タブレット用） */
+	.title{
+		margin-left: 80px;
+		margin-right: 80px;
+	}
+	h1 {
+		font-size:40px;
+	}
+	
+	h1 span{
+		width: 50px;
+		height: 50px;
+		line-height: 45px;
+	}
+
+	img {
+		width: 10%;
+		height: 10%;
+	}
+	
+	.select_area{
+		width: 600px;
+	}
+	
+	.select_box select {
+		width:250px;
+	}
+	
+	/* ばってんの部分 */
+	.cross_mark{
+		padding-top: 15px;
+		font-size: 24px;
+	}
+	
+	.iframe_area{
+		width: 80vw;
+	}
+	
+}
